@@ -10,207 +10,58 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-/* === HERO BADGE === */
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(124,58,237,0.1);
-  border: 1px solid rgba(124,58,237,0.25);
-  border-radius: 999px;
-  padding: 6px 14px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--violet-600);
-  margin-bottom: 20px;
-}
-.hero-badge span { width:7px;height:7px;border-radius:50%;background:var(--violet-600);animation:pulse 2s infinite; }
-@keyframes pulse { 0%,100%{opacity:1}50%{opacity:.4} }
-
-/* === DOWNLOAD BTN === */
-.btn-download {
-  background: var(--gradient);
-  color: #fff;
-  padding: 18px 36px;
-  border-radius: 16px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 20px 40px -12px rgba(124,58,237,0.45);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn-download:hover { transform: translateY(-3px); box-shadow: 0 28px 48px -12px rgba(124,58,237,0.5); }
-.btn-download small { font-size:0.75rem; font-weight:400; opacity:0.85; display:block; margin-top:2px; }
-
-/* === SCREENSHOTS === */
-.screenshots {
-  padding: 80px 0;
-  background: linear-gradient(180deg, #fafafa 0%, #f3f0ff 100%);
-}
-.screenshots h2 { text-align:center; margin-bottom: 48px; }
-.screens-row {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  overflow-x: auto;
-  padding: 16px 24px 24px;
-  scrollbar-width: none;
-}
-.screens-row::-webkit-scrollbar { display:none; }
-.screen-frame {
-  flex: 0 0 200px;
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 24px 48px -12px rgba(76,29,149,0.22);
-  border: 6px solid #fff;
-  transition: transform 0.3s;
-}
-.screen-frame:hover { transform: translateY(-8px) scale(1.02); }
-.screen-frame img { width:100%; display:block; }
-.screen-label {
-  text-align:center;
-  font-size:0.8rem;
-  color:var(--muted);
-  margin-top:10px;
-  font-weight:600;
-}
-
-/* === FEATURES === */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 16px;
-}
-.feat-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 24px 20px;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.feat-card:hover { transform:translateY(-4px); box-shadow: var(--shadow); }
-.feat-icon {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-}
-.feat-card h3 { font-size:0.95rem; margin-bottom:6px; }
-.feat-card p { font-size:0.85rem; color:var(--muted); margin:0; }
-
-/* === PRICING === */
-.pricing { padding: 80px 0; background: #f8f7ff; }
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 24px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.price-card {
-  background: var(--card);
-  border: 2px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 36px 28px;
-  position: relative;
-}
-.price-card.pro {
-  border-color: var(--violet-600);
-  box-shadow: var(--shadow);
-}
-.price-badge {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--gradient);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 4px 16px;
-  border-radius: 999px;
-}
-.price-name { font-size:1.1rem; font-weight:700; margin-bottom:8px; }
-.price-amount { font-size:2.4rem; font-weight:800; color:var(--violet-600); margin-bottom:4px; }
-.price-amount span { font-size:1rem; font-weight:500; color:var(--muted); }
-.price-desc { font-size:0.85rem; color:var(--muted); margin-bottom:24px; }
-.price-features { list-style:none; padding:0; margin:0 0 28px; }
-.price-features li {
-  font-size:0.88rem;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--line);
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.price-features li:last-child { border:none; }
-.check { color: var(--violet-600); font-weight:700; }
-.price-btn {
-  display:block;
-  text-align:center;
-  padding: 14px;
-  border-radius: 14px;
-  font-weight:700;
-  font-size:0.95rem;
-  transition: transform 0.2s;
-}
-.price-btn:hover { transform:translateY(-2px); }
-.price-btn-free {
-  border: 2px solid var(--line);
-  color: var(--ink);
-}
-.price-btn-pro {
-  background: var(--gradient);
-  color: #fff;
-  box-shadow: var(--shadow);
-}
-
-/* === FAQ === */
-.faq { padding: 80px 0; }
-.faq-list { max-width: 680px; margin: 0 auto; }
-.faq-item {
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  margin-bottom: 12px;
-  overflow: hidden;
-}
-.faq-q {
-  padding: 18px 20px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background: var(--card);
-}
-.faq-q:hover { background: #f8f7ff; }
-.faq-a {
-  padding: 0 20px 18px;
-  font-size:0.88rem;
-  color:var(--muted);
-  background: var(--card);
-  display:none;
-}
-.faq-item.open .faq-a { display:block; }
-.faq-item.open .faq-arrow { transform: rotate(180deg); }
-.faq-arrow { transition: transform 0.25s; color: var(--muted); }
-
-@media(max-width:860px){
-  .features-grid { grid-template-columns:repeat(2,1fr); }
-  .pricing-grid { grid-template-columns:1fr; }
-  .screens-row { gap:16px; }
-  .screen-frame { flex:0 0 160px; }
-}
-@media(max-width:560px){
-  .features-grid { grid-template-columns:1fr; }
-  .screen-frame { flex:0 0 140px; }
-}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.25);border-radius:999px;padding:6px 14px;font-size:.8rem;font-weight:600;color:var(--violet-600);margin-bottom:20px}
+.hero-badge span{width:7px;height:7px;border-radius:50%;background:var(--violet-600);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.btn-download{background:var(--gradient);color:#fff;padding:18px 36px;border-radius:16px;font-size:1.05rem;font-weight:700;display:inline-flex;align-items:center;gap:10px;box-shadow:0 20px 40px -12px rgba(124,58,237,0.45);transition:transform .2s,box-shadow .2s}
+.btn-download:hover{transform:translateY(-3px);box-shadow:0 28px 48px -12px rgba(124,58,237,0.5)}
+.btn-download small{font-size:.75rem;font-weight:400;opacity:.85;display:block;margin-top:2px}
+.screenshots{padding:80px 0;background:linear-gradient(180deg,#fafafa 0%,#f3f0ff 100%)}
+.screenshots h2{text-align:center;margin-bottom:48px}
+.screens-row{display:flex;gap:24px;justify-content:center;overflow-x:auto;padding:16px 24px 24px;scrollbar-width:none}
+.screens-row::-webkit-scrollbar{display:none}
+.screen-frame{flex:0 0 200px;border-radius:28px;overflow:hidden;box-shadow:0 24px 48px -12px rgba(76,29,149,0.22);border:6px solid #fff;transition:transform .3s}
+.screen-frame:hover{transform:translateY(-8px) scale(1.02)}
+.screen-frame img{width:100%;display:block}
+.screen-label{text-align:center;font-size:.8rem;color:var(--muted);margin-top:10px;font-weight:600}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feat-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-md);padding:24px 20px;transition:transform .25s,box-shadow .25s}
+.feat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.feat-icon{font-size:1.8rem;margin-bottom:12px}
+.feat-card h3{font-size:.95rem;margin-bottom:6px}
+.feat-card p{font-size:.85rem;color:var(--muted);margin:0}
+.pricing{padding:80px 0;background:#f8f7ff}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:700px;margin:0 auto}
+.price-card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius-lg);padding:36px 28px;position:relative}
+.price-card.pro{border-color:var(--violet-600);box-shadow:var(--shadow)}
+.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gradient);color:#fff;font-size:.75rem;font-weight:700;padding:4px 16px;border-radius:999px}
+.price-name{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.price-amount{font-size:2.4rem;font-weight:800;color:var(--violet-600);margin-bottom:4px}
+.price-amount span{font-size:1rem;font-weight:500;color:var(--muted)}
+.price-desc{font-size:.85rem;color:var(--muted);margin-bottom:24px}
+.price-features{list-style:none;padding:0;margin:0 0 28px}
+.price-features li{font-size:.88rem;padding:8px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+.price-features li:last-child{border:none}
+.check{color:var(--violet-600);font-weight:700}
+.price-btn{display:block;text-align:center;padding:14px;border-radius:14px;font-weight:700;font-size:.95rem;transition:transform .2s}
+.price-btn:hover{transform:translateY(-2px)}
+.price-btn-free{border:2px solid var(--line);color:var(--ink)}
+.price-btn-pro{background:var(--gradient);color:#fff;box-shadow:var(--shadow)}
+.faq{padding:80px 0}
+.faq-list{max-width:680px;margin:0 auto}
+.faq-item{border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:18px 20px;font-weight:600;font-size:.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:var(--card)}
+.faq-q:hover{background:#f8f7ff}
+.faq-a{padding:0 20px 18px;font-size:.88rem;color:var(--muted);background:var(--card);display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-arrow{transition:transform .25s;color:var(--muted)}
+@media(max-width:860px){.features-grid{grid-template-columns:repeat(2,1fr)}.pricing-grid{grid-template-columns:1fr}.screen-frame{flex:0 0 160px}}
+@media(max-width:560px){.features-grid{grid-template-columns:1fr}.screen-frame{flex:0 0 140px}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="wrap">
     <a href="index.html" class="brand">
@@ -233,7 +84,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
   <div class="wrap">
     <div class="mark-hero">
@@ -255,73 +105,34 @@
   </div>
 </header>
 
-<!-- SCREENSHOTS -->
 <section class="screenshots">
   <div class="wrap">
     <span class="section-label">See it in action</span>
     <h2>Everything you need, right in your pocket</h2>
   </div>
   <div class="screens-row">
-    <div>
-      <div class="screen-frame"><img src="screen1.jpg" alt="StoryForge Create screen" loading="lazy"></div>
-      <p class="screen-label">Create</p>
-    </div>
-    <div>
-      <div class="screen-frame"><img src="screen2.jpg" alt="StoryForge Result screen" loading="lazy"></div>
-      <p class="screen-label">Generated Result</p>
-    </div>
-    <div>
-      <div class="screen-frame"><img src="screen3.jpg" alt="StoryForge History screen" loading="lazy"></div>
-      <p class="screen-label">History</p>
-    </div>
-    <div>
-      <div class="screen-frame"><img src="screen4.jpg" alt="StoryForge Profile screen" loading="lazy"></div>
-      <p class="screen-label">Profile</p>
-    </div>
+    <div><div class="screen-frame"><img src="screen1.jpg" alt="Create" loading="lazy"></div><p class="screen-label">Create</p></div>
+    <div><div class="screen-frame"><img src="screen2.jpg" alt="Result" loading="lazy"></div><p class="screen-label">Generated Result</p></div>
+    <div><div class="screen-frame"><img src="screen3.jpg" alt="History" loading="lazy"></div><p class="screen-label">History</p></div>
+    <div><div class="screen-frame"><img src="screen4.jpg" alt="Profile" loading="lazy"></div><p class="screen-label">Profile</p></div>
   </div>
 </section>
 
-<!-- FEATURES -->
 <section class="section" id="features">
   <div class="wrap">
     <span class="section-label">Features</span>
     <h2>One app. Every type of content.</h2>
     <div class="features-grid">
-      <div class="feat-card">
-        <div class="feat-icon">📖</div>
-        <h3>AI Stories</h3>
-        <p>Generate creative short stories on any topic in seconds.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">📰</div>
-        <h3>Articles</h3>
-        <p>Write well-structured articles ready to publish.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">✍️</div>
-        <h3>Blog Posts</h3>
-        <p>Full blog posts with intro, body, and conclusion.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">🎬</div>
-        <h3>YouTube Scripts</h3>
-        <p>Engaging scripts for Shorts and long-form videos.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">📧</div>
-        <h3>Email Writing</h3>
-        <p>Professional emails written for you in any tone.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">📚</div>
-        <h3>History & Favorites</h3>
-        <p>Every generation saved to your account, searchable anytime.</p>
-      </div>
+      <div class="feat-card"><div class="feat-icon">📖</div><h3>AI Stories</h3><p>Generate creative short stories on any topic in seconds.</p></div>
+      <div class="feat-card"><div class="feat-icon">📰</div><h3>Articles</h3><p>Write well-structured articles ready to publish.</p></div>
+      <div class="feat-card"><div class="feat-icon">✍️</div><h3>Blog Posts</h3><p>Full blog posts with intro, body, and conclusion.</p></div>
+      <div class="feat-card"><div class="feat-icon">🎬</div><h3>YouTube Scripts</h3><p>Engaging scripts for Shorts and long-form videos.</p></div>
+      <div class="feat-card"><div class="feat-icon">📧</div><h3>Email Writing</h3><p>Professional emails written for you in any tone.</p></div>
+      <div class="feat-card"><div class="feat-icon">📚</div><h3>History & Favorites</h3><p>Every generation saved to your account, searchable anytime.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="wrap">
     <span class="section-label">Pricing</span>
@@ -356,7 +167,6 @@
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="faq" id="faq">
   <div class="wrap">
     <span class="section-label">FAQ</span>
@@ -364,7 +174,7 @@
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">Is StoryForge free to use? <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
-        <div class="faq-a">Yes! StoryForge is free to download and use. The free plan gives you 3 content generations every 24 hours — enough to try all content types.</div>
+        <div class="faq-a">Yes! StoryForge is free to download and use. The free plan gives you 3 content generations every 24 hours.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">What types of content can I create? <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
@@ -372,11 +182,11 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">How does the 24-hour limit work? <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
-        <div class="faq-a">Your 3 free generations reset 24 hours after your first generation in each cycle — not at midnight. So if you generate at 3pm, your limit resets at 3pm the next day.</div>
+        <div class="faq-a">Your 3 free generations reset 24 hours after your first generation in each cycle — not at midnight.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Is my content saved? <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
-        <div class="faq-a">Yes — every generation is automatically saved to your History so you can revisit, copy, or favorite it anytime. History is linked to your account and syncs securely.</div>
+        <div class="faq-a">Yes — every generation is automatically saved to your History so you can revisit, copy, or favorite it anytime.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">What devices does it work on? <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
@@ -390,7 +200,6 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="section">
   <div class="wrap">
     <div class="cta-band">
@@ -401,7 +210,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -451,11 +259,9 @@
 </footer>
 
 <script>
-document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
-    q.parentElement.classList.toggle('open');
-  });
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>q.parentElement.classList.toggle('open'));
 });
 </script>
 </body>
-</html>
+          </html>
