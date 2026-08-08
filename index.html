@@ -31,12 +31,12 @@
 .feat-card h3{font-size:.95rem;margin-bottom:6px}
 .feat-card p{font-size:.85rem;color:var(--muted);margin:0}
 .pricing{padding:80px 0;background:#f8f7ff}
-.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:700px;margin:0 auto}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto}
 .price-card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius-lg);padding:36px 28px;position:relative}
 .price-card.pro{border-color:var(--violet-600);box-shadow:var(--shadow)}
-.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gradient);color:#fff;font-size:.75rem;font-weight:700;padding:4px 16px;border-radius:999px}
+.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gradient);color:#fff;font-size:.75rem;font-weight:700;padding:4px 16px;border-radius:999px;white-space:nowrap}
 .price-name{font-size:1.1rem;font-weight:700;margin-bottom:8px}
-.price-amount{font-size:2.4rem;font-weight:800;color:var(--violet-600);margin-bottom:4px}
+.price-amount{font-size:2.2rem;font-weight:800;color:var(--violet-600);margin-bottom:4px}
 .price-amount span{font-size:1rem;font-weight:500;color:var(--muted)}
 .price-desc{font-size:.85rem;color:var(--muted);margin-bottom:24px}
 .price-features{list-style:none;padding:0;margin:0 0 28px}
@@ -136,8 +136,10 @@
 <section class="pricing" id="pricing">
   <div class="wrap">
     <span class="section-label">Pricing</span>
-    <h2 style="text-align:center;margin-bottom:48px;">Start free. Upgrade when ready.</h2>
+    <h2 style="text-align:center;margin-bottom:12px;">Start free. Upgrade when ready.</h2>
+    <p style="text-align:center;color:var(--muted);margin-bottom:48px;font-size:0.95rem;">All paid plans via <strong>USDT (BEP20)</strong> on BNB Smart Chain</p>
     <div class="pricing-grid">
+
       <div class="price-card">
         <div class="price-name">Free</div>
         <div class="price-amount">$0 <span>/ forever</span></div>
@@ -150,20 +152,54 @@
         </ul>
         <a href="https://github.com/soomple/storyforge/releases/download/v1.0/StoryForge.apk" class="price-btn price-btn-free" download>Download Free</a>
       </div>
+
       <div class="price-card pro">
-        <div class="price-badge">⭐ Most Popular</div>
-        <div class="price-name">Pro</div>
-        <div class="price-amount" style="font-size:1.6rem;">Coming Soon</div>
-        <div class="price-desc">Unlimited generations and priority features.</div>
+        <div class="price-badge">⭐ Recommended</div>
+        <div class="price-name">3-Month Pro</div>
+        <div class="price-amount">$12.99 <span>USDT</span></div>
+        <div class="price-desc">$4.33/mo · 90 days access</div>
         <ul class="price-features">
-          <li><span class="check">✓</span> Unlimited generations</li>
-          <li><span class="check">✓</span> Priority AI speed</li>
-          <li><span class="check">✓</span> All Free features</li>
-          <li><span class="check">✓</span> Early access to new tools</li>
+          <li><span class="check">✓</span> Unlimited AI generations</li>
+          <li><span class="check">✓</span> Faster response priority</li>
+          <li><span class="check">✓</span> Early access to new features</li>
+          <li><span class="check">✓</span> Unlimited history</li>
+          <li><span class="check">✓</span> Premium StoryForge experience</li>
         </ul>
-        <a href="https://t.me/StoryForgeOfficial" class="price-btn price-btn-pro" target="_blank">Join Waitlist →</a>
+        <a href="https://t.me/StoryForgeOfficial" class="price-btn price-btn-pro" target="_blank">Subscribe via Telegram →</a>
       </div>
+
+      <div class="price-card" style="border-color:#10b981;">
+        <div class="price-badge" style="background:linear-gradient(135deg,#10b981,#059669);">Save 20%</div>
+        <div class="price-name">6-Month Pro</div>
+        <div class="price-amount">$23.99 <span>USDT</span></div>
+        <div class="price-desc">$4.00/mo · 180 days access</div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> Unlimited AI generations</li>
+          <li><span class="check">✓</span> Faster response priority</li>
+          <li><span class="check">✓</span> Early access to new features</li>
+          <li><span class="check">✓</span> Unlimited history</li>
+          <li><span class="check">✓</span> Premium StoryForge experience</li>
+        </ul>
+        <a href="https://t.me/StoryForgeOfficial" class="price-btn price-btn-pro" target="_blank">Subscribe via Telegram →</a>
+      </div>
+
+      <div class="price-card" style="border-color:#f59e0b;">
+        <div class="price-badge" style="background:linear-gradient(135deg,#f59e0b,#d97706);">★ Best Value</div>
+        <div class="price-name">Yearly Pro</div>
+        <div class="price-amount">$39.99 <span>USDT</span></div>
+        <div class="price-desc">$3.33/mo · 365 days access</div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> Unlimited AI generations</li>
+          <li><span class="check">✓</span> Faster response priority</li>
+          <li><span class="check">✓</span> Early access to new features</li>
+          <li><span class="check">✓</span> Unlimited history</li>
+          <li><span class="check">✓</span> Premium StoryForge experience</li>
+        </ul>
+        <a href="https://t.me/StoryForgeOfficial" class="price-btn price-btn-pro" target="_blank">Subscribe via Telegram →</a>
+      </div>
+
     </div>
+    <p style="text-align:center;margin-top:28px;font-size:0.82rem;color:var(--muted);">Also available: Monthly Plan · $4.99 USDT / 30 days · <a href="https://t.me/StoryForgeOfficial" style="color:var(--violet-600);font-weight:600;" target="_blank">Contact us on Telegram</a></p>
   </div>
 </section>
 
@@ -185,16 +221,16 @@
         <div class="faq-a">Your 3 free generations reset 24 hours after your first generation in each cycle — not at midnight.</div>
       </div>
       <div class="faq-item">
+        <div class="faq-q">How do I upgrade to Pro? <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+        <div class="faq-a">Pro plans are paid via USDT (BEP20) on BNB Smart Chain. Contact us on Telegram @StoryForgeOfficial to subscribe and get your plan activated.</div>
+      </div>
+      <div class="faq-item">
         <div class="faq-q">Is my content saved? <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
         <div class="faq-a">Yes — every generation is automatically saved to your History so you can revisit, copy, or favorite it anytime.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">What devices does it work on? <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
         <div class="faq-a">StoryForge currently works on Android devices (version 7.0 and above). An iOS version is planned for the future.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How do I sign in? <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
-        <div class="faq-a">You can sign in with your Google account (one tap) or create an account with your email and password.</div>
       </div>
     </div>
   </div>
@@ -264,5 +300,4 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 });
 </script>
 </body>
-          </html>
-
+</html>
